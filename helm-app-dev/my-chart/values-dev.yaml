@@ -40,7 +40,7 @@ image:
   pullPolicy: IfNotPresent
   tag: v111.0
 imagePullSecrets:
-  - name: ghcr-login-secret
+  - name: my-app-dev-registry-secret
 imageCredentials:
   registry: ghcr.io
   username: dvirmoyal
