@@ -40,7 +40,7 @@ image:
   pullPolicy: IfNotPresent
   tag: v111.0
 imagePullSecrets:
-  - name: my-app-dev-registry-secret
+  - name: my-app-dev-registry-secret     #double check the relese name!!! dev/prod
 imageCredentials:
   registry: ghcr.io
   username: dvirmoyal
