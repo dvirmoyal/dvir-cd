@@ -6,7 +6,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-my-flaskapp
+      app: {{ .Release.Name }}-my-flaskapp-prod
   template:
     metadata:
       labels:
@@ -22,23 +22,23 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: MYSQL_HOST
-              value: "my-app-dev-mysql.dvir-app.svc.cluster.local"
+              value: { { .Values.mysql.host | quote } }
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-mysql-username-dev
+                  name: my-app-dev-mysql-username-prod
                   key: username
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-mysql-password-dev
+                  name: my-app-dev-mysql-password-prod
                   key: password
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Release.Name }}-mysql-root-password-dev
+                  name: my-app-dev-mysql-root-password-prod
                   key: password
             - name: MYSQL_DATABASE
-              value: "world-of-game"
+              value: "worldofgame"
             - name: MYSQL_PORT
               value: "3306"

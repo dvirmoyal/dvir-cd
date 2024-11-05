@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   selector:
-    app: {{ .Release.Name }}-my-flaskapp
+    app: {{ .Release.Name }}-my-flaskapp-prod
   ports:
       - protocol: TCP
         port: 5000
