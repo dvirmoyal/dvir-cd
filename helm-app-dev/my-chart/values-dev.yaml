@@ -44,5 +44,5 @@ imagePullSecrets:
 imageCredentials:
   registry: ghcr.io
   username: dvirmoyal
-  password: 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
+  password: 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
   email: dvirmoyal25@gmail.com
