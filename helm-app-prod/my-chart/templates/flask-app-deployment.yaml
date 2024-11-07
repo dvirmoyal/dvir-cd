@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: MYSQL_HOST
-              value: { { .Values.mysql.host | quote } }
+              value: {{ .Values.mysql.host | quote }}
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
