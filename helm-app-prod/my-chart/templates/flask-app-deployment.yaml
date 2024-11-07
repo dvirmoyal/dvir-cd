@@ -26,17 +26,17 @@ spec:
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: my-app-dev-mysql-username-prod
+                  name:  mysql-username-root
                   key: username
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: my-app-dev-mysql-password-prod
+                  name: mysql-password-prod
                   key: password
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: my-app-dev-mysql-root-password-prod
+                  name: mysql-root-password-prod
                   key: password
             - name: MYSQL_DATABASE
               value: "worldofgame"

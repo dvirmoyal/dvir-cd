@@ -11,8 +11,8 @@ image:
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets:
-  - name: my-app-dev-registry-secret #the same for prod + dev
+  - name: my-app-prod-registry-secret #the same for prod + dev
 
 
 mysql:
-  host: "defulte"
+  host: "database-1.cfeiieygic3s.us-east-1.rds.amazonaws.com"
