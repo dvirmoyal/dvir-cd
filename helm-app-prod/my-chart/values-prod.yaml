@@ -1,18 +1,9 @@
-#this is values file for prod env
 replicaCount: 1
-
 image:
-  repository: "ghcr.io/dvirmoyal/dvir-demo"
-  # This sets the pull policy for images.
+  repository: ghcr.io/dvirmoyal/dvir-demo
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
-
-
-# This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+  tag: v114.0
 imagePullSecrets:
-  - name: my-app-prod-registry-secret #the same for prod + dev
-
-
+  - name: my-app-prod-registry-secret
 mysql:
-  host: "database-1.cfeiieygic3s.us-east-1.rds.amazonaws.com"
+  host: database-1.cfeiieygic3s.us-east-1.rds.amazonaws.com
