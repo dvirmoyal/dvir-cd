@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}-my-flaskapp
+        app: {{ .Release.Name }}-my-flaskapp-prod
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
