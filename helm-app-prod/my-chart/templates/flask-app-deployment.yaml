@@ -12,6 +12,7 @@ spec:
       labels:
         app: {{ .Release.Name }}-my-flaskapp-prod
     spec:
+      serviceAccountName: vault
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -42,3 +43,7 @@ spec:
               value: "worldofgame"
             - name: MYSQL_PORT
               value: "3306"
+            - name: VAULT_ADDR
+              value: 'http://vault.vault.svc.cluster.local:8200'
+            - name: JWT_PATH
+              value: '/var/run/secrets/kubernetes.io/serviceaccount/token'
