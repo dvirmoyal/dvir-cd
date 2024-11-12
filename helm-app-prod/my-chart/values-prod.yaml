@@ -6,4 +6,4 @@ image:
 imagePullSecrets:
   - name: my-app-prod-registry-secret
 mysql:
-  host: database-1.cfeiieygic3s.us-east-1.rds.amazonaws.com
+  host: my-app-rds.cfeiieygic3s.us-east-1.rds.amazonaws.com
