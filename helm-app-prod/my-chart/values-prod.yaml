@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/dvirmoyal/dvir-demo
   pullPolicy: IfNotPresent
-  tag: v114.0
+  tag: v118.0
 imagePullSecrets:
   - name: my-app-prod-registry-secret
 mysql:
