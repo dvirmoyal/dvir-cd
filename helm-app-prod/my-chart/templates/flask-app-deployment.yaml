@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-app-deployment
+  name: {{ .Release.Name }}-app-deployment-prod
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -24,21 +24,6 @@ spec:
           env:
             - name: MYSQL_HOST
               value: {{ .Values.mysql.host | quote }}
-            - name: MYSQL_USER
-              valueFrom:
-                secretKeyRef:
-                  name:  mysql-username-root
-                  key: username
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-password-prod
-                  key: password
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-root-password-prod
-                  key: password
             - name: MYSQL_DATABASE
               value: "worldofgame"
             - name: MYSQL_PORT
