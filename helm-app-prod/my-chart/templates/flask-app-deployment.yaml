@@ -44,6 +44,6 @@ spec:
             - name: MYSQL_PORT
               value: "3306"
             - name: VAULT_ADDR
-              value: 'http://vault.default.svc.cluster.local:8200'
+              value: 'http://vault.dvir-app.svc.cluster.local:8200'
             - name: JWT_PATH
               value: '/var/run/secrets/kubernetes.io/serviceaccount/token'
