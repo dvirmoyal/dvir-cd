@@ -38,6 +38,6 @@ mysql:
 image:
   repository: ghcr.io/dvirmoyal/dvir-demo
   pullPolicy: IfNotPresent
-  tag: v112.0
+  tag: ''
 imagePullSecrets:
   - name: my-app-dev-registry-secret
