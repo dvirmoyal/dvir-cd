@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: ghcr.io/dvirmoyal/dvir-demo
+  repository: /dvirmoyal/
   pullPolicy: IfNotPresent
   tag: v121.0
 imagePullSecrets:
