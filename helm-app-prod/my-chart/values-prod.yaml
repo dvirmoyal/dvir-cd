@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: /dvirmoyal/
   pullPolicy: IfNotPresent
-  tag: v121.0
+  tag: ''
 imagePullSecrets:
   - name: my-app-prod-registry-secret
 mysql:
