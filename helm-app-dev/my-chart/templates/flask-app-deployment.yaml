@@ -2,6 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-app-deployment
+          metadata:
+            annotations:
+              argocd-image-updater.argoproj.io/image-list: |
+                - name: {{ .Chart.Name }}
+                  newTag: "{{ .Values.image.tag }}"
+              argocd-image-updater.argoproj.io/{{ .Chart.Name }}.update: "true"
+              argocd-image-updater.argoproj.io/{{ .Chart.Name }}.strategy: "semver"
+              argocd-image-updater.argoproj.io/{{ .Chart.Name }}.semver-range: "^PRE-.*"
+
+
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
