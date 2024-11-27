@@ -4,12 +4,9 @@ metadata:
   name: {{ .Release.Name }}-app-deployment
           metadata:
             annotations:
-              argocd-image-updater.argoproj.io/image-list: |
-                - name: {{ .Chart.Name }}
-                  newTag: "{{ .Values.image.tag }}"
-              argocd-image-updater.argoproj.io/{{ .Chart.Name }}.update: "true"
-              argocd-image-updater.argoproj.io/{{ .Chart.Name }}.strategy: "semver"
-              argocd-image-updater.argoproj.io/{{ .Chart.Name }}.semver-range: "^PRE-.*"
+              argocd-image-updater.argoproj.io/image-list: dvir-demo=ghcr.io/dvirmoyal/dvir-demo
+              argocd-image-updater.argoproj.io/dvir-demo.update-strategy: semver
+              argocd-image-updater.argoproj.io/dvir-demo.allow-tags: regexp:^PRE-.*
 
 
 spec:
