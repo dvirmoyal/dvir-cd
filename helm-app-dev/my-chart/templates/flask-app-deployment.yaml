@@ -2,11 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-app-deployment
-          metadata:
-            annotations:
-              argocd-image-updater.argoproj.io/image-list: dvir-demo=ghcr.io/dvirmoyal/dvir-demo
-              argocd-image-updater.argoproj.io/dvir-demo.update-strategy: semver
-              argocd-image-updater.argoproj.io/dvir-demo.allow-tags: regexp:^PRE-.*
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: dvir-demo=ghcr.io/dvirmoyal/dvir-demo
+    argocd-image-updater.argoproj.io/dvir-demo.update-strategy: semver
+    argocd-image-updater.argoproj.io/dvir-demo.allow-tags: regexp:^PRE-.*
 
 
 spec:
