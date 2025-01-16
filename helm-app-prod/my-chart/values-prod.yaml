@@ -3,7 +3,7 @@ image:
   repository: ghcr.io/dvirmoyal/dvir-demo
   pullPolicy: IfNotPresent
   tag: ""
-imagePullSecrets:
-  - name: my-app-prod-registry-secret
+#imagePullSecrets:
+#- name: my-app-prod-registry-secret
 mysql:
   host: my-app-rds.cfeiieygic3s.us-east-1.rds.amazonaws.com

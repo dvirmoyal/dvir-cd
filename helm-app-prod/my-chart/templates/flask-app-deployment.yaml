@@ -18,10 +18,6 @@ spec:
         app: {{ .Release.Name }}-my-flaskapp-prod
     spec:
       serviceAccountName: vault
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
